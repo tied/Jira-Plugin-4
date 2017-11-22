@@ -1,0 +1,132 @@
+<table border="1" align="center">
+    <caption>
+    </caption>
+
+    <tr>
+      <th width="160" bgcolor="#FDE9D9"><div align="left">$i18n.getText("project.no")</div></th>
+        <td width="192">$projectNo</td>
+        <td width="176" bgcolor="#FDE9D9"><strong>$i18n.getText("project.manager")</strong></td>
+        <td width="160">$projectManagerName</td>
+        <td width="192"><strong>$i18n.getText("project.manager.conclusion")</strong></td>
+        <td width="120">	</td>
+    </tr>
+    <tr>
+        <th bgcolor="#FDE9D9"><div align="left">$i18n.getText("project.task.no")</div></th>
+        <td>&nbsp;</td>
+        <td bgcolor="#FDE9D9"><strong>$i18n.getText("project.sqa")</strong></td>
+        <td>$projectSqaName</td>
+        <td><strong>$i18n.getText("project.sqa.conclusion")</strong></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <th bgcolor="#FDE9D9" style="text-align:center;"><div align="left">$i18n.getText("project.monitor.item")</div></th>
+      <th bgcolor="#FDE9D9" style="text-align:center;"><div align="left">$i18n.getText("project.monitor.metric")</div></th>
+      <th bgcolor="#FDE9D9" style="text-align:center;"><div align="left">$i18n.getText("project.monitor.baseline")</div></th>
+        <th bgcolor="#FDE9D9" style="text-align:center;"><div align="left">$i18n.getText("project.monitor.actual")</div></th>
+        <th colspan="2" style="text-align:center;"><div align="left">$i18n.getText("project.manager.comments")</div></th>
+    </tr>
+    <tr>
+      <th bgcolor="#CCFFFF" style="text-align:center;"><div align="left">$i18n.getText("project.effort")</div></th>
+        <th bgcolor="#CCFFFF" style="text-align:center;"><div align="left">$i18n.getText("project.effort.cpi")</div></th>
+        <th bgcolor="#CCFFFF" style="text-align:center;"><div align="left">$i18n.getText("project.effort.cpi.baseline")</div></th>
+        <th style="text-align:center;">&nbsp;</th>
+        <th colspan="2" rowspan="7" style="text-align:center;">&nbsp;</th>
+    </tr>
+
+    <tr>
+      <th rowspan="2" bgcolor="#CCFFFF"><div align="left">$i18n.getText("project.schedule")</div></th>
+        <td bgcolor="#CCFFFF"><strong>$i18n.getText("project.schedule.spi")</strong></td>
+        <td bgcolor="#CCFFFF"><span style="text-align:center;"><strong>$i18n.getText("project.schedule.spi.baseline")</strong></span></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td height="20" colspan="2" bgcolor="#CCFFFF"><strong>$i18n.getText("project.schedule.percent")</strong></td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <th rowspan="9" bgcolor="#CCFFFF"><div align="left">$i18n.getText("project.quality")</div></th>
+        <td height="20" bgcolor="#CCFFFF"><strong>$i18n.getText("project.density")</strong></td>
+        <td bgcolor="#CCFFFF">$i18n.getText("project.density.baseline")</td>
+        #if ($defectDensity > 0.4)
+        	<td bgcolor="#FF0000" align="right"><font color="#FFFFFF">$defectDensity</font></td>
+        #else
+        	<td bgcolor="#008000" align="right"><font color="#FFFFFF">$defectDensity</font></td>
+        #end
+    </tr>
+    <tr>
+        <td height="20" bgcolor="#CCFFFF"><strong>$i18n.getText("project.dev.density")</strong></td>
+        <td bgcolor="#CCFFFF">$i18n.getText("project.dev.density.baseline")</td>
+        #if ($devDefectDensity > 2.6)
+        	<td bgcolor="#FF0000" align="right"><font color="#FFFFFF">$devDefectDensity</font></td>
+        #else
+        	<td bgcolor="#008000" align="right"><font color="#FFFFFF">$devDefectDensity</font></td>
+        #end
+    </tr>
+    <tr>
+        <td height="20" bgcolor="#CCFFFF"><strong>$i18n.getText("project.quality.sit.escaped")</strong></td>
+        <td bgcolor="#CCFFFF">$i18n.getText("project.quality.sit.escaped.baseline")</td>
+        #if ($sitRatio > 15)
+        	<td bgcolor="#FF0000" align="right"><font color="#FFFFFF">$sitRatio%</font></td>
+        #else
+        	<td bgcolor="#008000" align="right"><font color="#FFFFFF">$sitRatio%</font></td>
+        #end
+    </tr>
+    <tr>
+        <td height="20" bgcolor="#CCFFFF"><strong>$i18n.getText("project.quality.uat.escaped")</strong></td>
+        <td bgcolor="#CCFFFF">$i18n.getText("project.quality.uat.escaped.baseline")</td>
+        #if ($uatRatio > 10)
+        	<td bgcolor="#FF0000" align="right"><font color="#FFFFFF">$uatRatio%</font></td>
+        #else
+        	<td bgcolor="#008000" align="right"><font color="#FFFFFF">$uatRatio%</font></td>
+        #end
+    </tr>
+    <tr>
+        <td rowspan="3" bgcolor="#CCFFFF"><strong>$i18n.getText("project.defect.reason")</strong></td>
+        <td height="20" bgcolor="#FDE9D9">$defectReasonList0</td>
+        <td align="right">$defectPercentList0</td>
+        <td colspan="2"><strong>$i18n.getText("project.sqa.comments")</strong></td>
+    </tr>
+    <tr>
+        <td height="20" bgcolor="#FDE9D9">$defectReasonList1</td>
+        <td align="right">$defectPercentList1</td>
+        <td colspan="2" rowspan="6">&nbsp;</td>
+    </tr>
+    <tr>
+        <td height="20" bgcolor="#FDE9D9">$defectReasonList2</td>
+        <td align="right">$defectPercentList2</td>
+    </tr>
+    <tr>
+        <td height="20" colspan="2" bgcolor="#CCFFFF"><strong>$i18n.getText("project.defect.ratio")</strong></td>
+        #if ($openDefect > 0)
+        	<td bgcolor="#FF0000" align="right"><font color="#FFFFFF">$defectRatio</font></td>
+        #else
+        	<td bgcolor="#008000" align="right"><font color="#FFFFFF">$defectRatio</font></td>
+        #end
+    </tr>
+    <tr>
+        <td height="20" colspan="2" bgcolor="#CCFFFF"><strong>$i18n.getText("project.checklist.ratio")</strong></td>
+        #if ($openCheckList > 0)
+        	<td bgcolor="#FF0000" align="right"><font color="#FFFFFF">$checkListRatio</font></td>
+        #else
+        	<td bgcolor="#008000" align="right"><font color="#FFFFFF">$checkListRatio</font></td>
+        #end
+    </tr>
+    <tr>
+      <th bgcolor="#CCFFFF"><div align="left">$i18n.getText("project.change")</div></th>
+        <td height="20" colspan="2" bgcolor="#CCFFFF"><strong>$i18n.getText("project.change.ratio")</strong></td>
+        #if ($openChange > 0)
+        	<td bgcolor="#FF0000" align="right"><font color="#FFFFFF">$changeRatio</font></td>
+        #else
+        	<td bgcolor="#008000" align="right"><font color="#FFFFFF">$changeRatio</font></td>
+        #end
+    </tr>
+    <tr>
+      <th bgcolor="#CCFFFF"><div align="left">$i18n.getText("project.risk")</div></th>
+        <td height="20" colspan="2" bgcolor="#CCFFFF"><strong>$i18n.getText("project.risk.ratio")</strong></td>
+        #if ($openRisk > 0)
+        	<td bgcolor="#FF0000" align="right"><font color="#FFFFFF">$riskRatio</font></td>
+        #else
+        	<td bgcolor="#008000" align="right"><font color="#FFFFFF">$riskRatio</font></td>
+        #end
+    </tr>
+</table>
